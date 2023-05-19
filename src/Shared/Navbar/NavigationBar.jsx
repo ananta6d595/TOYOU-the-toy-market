@@ -15,9 +15,14 @@ const NavigationBar = () => {
     return (
         <nav className="md:flex justify-between items-center px-4 py-5 mx-auto  sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-14">
             <div className="flex items-center flex-shrink-0">
-                {/* <img src={chefLogo} className="w-100 h-10 mr-2" alt="Logo" /> */}
-                <span className=" text-4xl font-bold">TOYOU</span>
+
+                <div className=" bg-cyan-800 rounded-3xl px-4 py-2 border-8 border-white">
+                    <h1 className="font-semibold text-4xl text-white ">
+                        TO<span className="text-orange-400">Y</span>OU
+                    </h1>
+                </div>
             </div>
+            {/* mobile menu */}
             <div className="block lg:hidden">
                 <button
                     onClick={() => setIsOpen(!isOpen)}
@@ -49,19 +54,46 @@ const NavigationBar = () => {
                         to="/"
                         className={({ isActive }) =>
                             isActive
-                                ? "text-xl px-4 text-emerald-600 font-semibold underline"
+                                ? "text-xl px-4 text-cyan-800 font-semibold "
                                 : "px-4 text-xl text-slate-400"
                         }>
                         Home
                     </NavLink>
                     <NavLink
+                        to="/"
+                        className={({ isActive }) =>
+                            isActive
+                                ? "text-xl px-4 text-cyan-800 font-semibold "
+                                : "px-4 text-xl text-slate-400"
+                        }>
+                        All Toys
+                    </NavLink>
+                    <NavLink
+                        to="/"
+                        className={({ isActive }) =>
+                            isActive
+                                ? "text-xl px-4 text-cyan-800 font-semibold "
+                                : "px-4 text-xl text-slate-400"
+                        }>
+                        My Toys
+                    </NavLink>
+                    <NavLink
+                        to="/"
+                        className={({ isActive }) =>
+                            isActive
+                                ? "text-xl px-4 text-cyan-800 font-semibold "
+                                : "px-4 text-xl text-slate-400"
+                        }>
+                        Add A Toy
+                    </NavLink>
+                    <NavLink
                         to="/blog"
                         className={({ isActive }) =>
                             isActive
-                                ? "text-xl px-4 text-emerald-600 font-semibold underline"
+                                ? "text-xl px-4 text-cyan-800 font-semibold "
                                 : "px-4 text-xl text-slate-400"
                         }>
-                        Blog
+                        Blogs
                     </NavLink>
                 </div>
                 <div className="flex items-center gap-6">

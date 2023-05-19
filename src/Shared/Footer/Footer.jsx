@@ -2,45 +2,89 @@
 const Footer = () => {
     return (
         <>
-            <footer className="footer p-10 text-base-content">
+            <div>
+                <div className=" bg-sky-300 bg-opacity-60 stroke-transparent ">
+                    <div className="relative flex container">
+                        <img
+                            className="absolute h-32 bottom-[2px] left-[40px]"
+                            src="https://ouch-cdn2.icons8.com/V39WdbzUyJ5ivtk_K8zfSRYINH_yZdQsOttGgVOJ2vE/rs:fit:256:281/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9wbmcvNjI4/LzUzN2ZhNTM2LTgz/Y2QtNDBmZC1iMjRi/LWEyMDFkNmVlOTVl/Yi5wbmc.png"
+                        />{" "}
+                        {/* <img
+                            className="absolute h-32 -bottom-[25px] -left-[10px]"
+                            src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExMTIzMjQ4MDYzNmQxOGE3YzQwMTNiYzg5MjYyYmQwMTE4YWY5YzdjNSZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PXM/2si2ObWL19ZR9EFVX2/giphy.gif"
+                        />{" "} */}
+                        <div className="ms-36 md:flex flex-1 justify-between gap-6">
+                            <div className="text-slate-100 w-9/12">
+                                <h2 className="font-bold text-2xl text-violet-900">
+                                    Are you a seller ?
+                                </h2>
+                                <p className="text-lg text-slate-600">
+                                    Share your toys with us we will trade your
+                                    toy with best price in return.
+                                </p>{" "}
+                            </div>
+
+                            <div className="recipe-button">
+                                <button className="btn bg-cyan-700 border-none hover:bg-sky-500 w-16">
+                                    Sell
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <footer className=" bg-cyan-800 footer container p-10 text-base-content text-slate-200">
+                    <div>
+                        <div className=" bg-cyan-900 rounded-3xl px-4 py-6 border-8 border-white">
+                            <h1 className="font-semibold text-5xl text-white ">
+                                TO<span className="text-orange-400">Y</span>OU
+                            </h1>
+                        </div>
+                        <p className="font-medium text-base text-slate-200">
+                            Making toys since 2000
+                        </p>
+                    </div>
+                    <div>
+                        <span className="footer-title">Product</span>
+                        <a className="link link-hover">Prototype</a>
+                        <a className="link link-hover">Plans & Pricing</a>
+                        <a className="link link-hover">Customers</a>
+                        <a className="link link-hover">Advertisement</a>
+                    </div>
+                    <div>
+                        <span className="footer-title">Company</span>
+                        <a className="link link-hover">About us</a>
+                        <a className="link link-hover">Contact</a>
+                        <a className="link link-hover">Jobs</a>
+                        <a className="link link-hover">Latest News</a>
+                    </div>
+                    <div>
+                        <span className="footer-title">Legal</span>
+                        <a className="link link-hover">Terms of use</a>
+                        <a className="link link-hover">Privacy policy</a>
+                        <a className="link link-hover">Cookie policy</a>
+                    </div>
+                    <div>
+                        <span className="footer-title">Support & Contact</span>
+                        <a className="link link-hover">Help Desk</a>
+                        <a className="link link-hover">Become a Partner</a>{" "}
+                        <a className="link link-hover">
+                            524 Broadway ,
+                            <br /> NYC <br />
+                            +1 777 - 978 - 5570
+                        </a>
+                    </div>
+                </footer>
+            </div>
+            <div className="divide-y sm:max-w-xl md:max-w-full lg:max-w-screen-xl mx-auto bg-slate-400 h-[0.5px]  mb-9" />
+            <div className=" md:flex md:justify-between sm:max-w-xl md:max-w-full lg:max-w-screen-xl mx-auto px-10 md:px-14 text-gray-500 font-thin">
                 <div>
-                    <svg
-                        width="50"
-                        height="50"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fillRule="evenodd"
-                        clipRule="evenodd"
-                        className="fill-current">
-                        <path d="M22.672 15.226l-2.432.811.841 2.515c.33 1.019-.209 2.127-1.23 2.456-1.15.325-2.148-.321-2.463-1.226l-.84-2.518-5.013 1.677.84 2.517c.391 1.203-.434 2.542-1.831 2.542-.88 0-1.601-.564-1.86-1.314l-.842-2.516-2.431.809c-1.135.328-2.145-.317-2.463-1.229-.329-1.018.211-2.127 1.231-2.456l2.432-.809-1.621-4.823-2.432.808c-1.355.384-2.558-.59-2.558-1.839 0-.817.509-1.582 1.327-1.846l2.433-.809-.842-2.515c-.33-1.02.211-2.129 1.232-2.458 1.02-.329 2.13.209 2.461 1.229l.842 2.515 5.011-1.677-.839-2.517c-.403-1.238.484-2.553 1.843-2.553.819 0 1.585.509 1.85 1.326l.841 2.517 2.431-.81c1.02-.33 2.131.211 2.461 1.229.332 1.018-.21 2.126-1.23 2.456l-2.433.809 1.622 4.823 2.433-.809c1.242-.401 2.557.484 2.557 1.838 0 .819-.51 1.583-1.328 1.847m-8.992-6.428l-5.01 1.675 1.619 4.828 5.011-1.674-1.62-4.829z"></path>
-                    </svg>
-                    <p>
-                        ACME Industries Ltd.
-                        <br />
-                        Providing reliable tech since 1992
-                    </p>
+                    @2023 <span className="font-semibold">Ananta</span>. All
+                    Rights Reserved
                 </div>
                 <div>
-                    <span className="footer-title">Services</span>
-                    <a className="link link-hover">Branding</a>
-                    <a className="link link-hover">Design</a>
-                    <a className="link link-hover">Marketing</a>
-                    <a className="link link-hover">Advertisement</a>
+                    Powered by <span className="font-semibold">Ananta</span>
                 </div>
-                <div>
-                    <span className="footer-title">Company</span>
-                    <a className="link link-hover">About us</a>
-                    <a className="link link-hover">Contact</a>
-                    <a className="link link-hover">Jobs</a>
-                    <a className="link link-hover">Press kit</a>
-                </div>
-                <div>
-                    <span className="footer-title">Legal</span>
-                    <a className="link link-hover">Terms of use</a>
-                    <a className="link link-hover">Privacy policy</a>
-                    <a className="link link-hover">Cookie policy</a>
-                </div>
-            </footer>
+            </div>
         </>
     );
 };
