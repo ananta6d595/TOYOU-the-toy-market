@@ -32,7 +32,7 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
-                <footer className=" bg-cyan-800 footer container p-10 text-base-content text-slate-200">
+                <footer className=" bg-cyan-800 footer container p-10  text-slate-200">
                     <div>
                         <div className=" bg-cyan-900 rounded-3xl px-4 py-6 border-8 border-white">
                             <h1 className="font-semibold text-5xl text-white ">
