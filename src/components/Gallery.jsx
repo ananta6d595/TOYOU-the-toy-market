@@ -3,7 +3,7 @@ import React from 'react';
 const Gallery = ({images}) => {
     return (
         <>
-            <div className="container">
+            <div className="container mb-14">
                 <swiper-container
                     slides-per-view="3"
                     navigation="true"
@@ -15,10 +15,10 @@ const Gallery = ({images}) => {
                     {images.map((image, index) => {
                         return (
                             <swiper-slide key={index}>
-                                <div className="mx-2 rounded-lg">
+                                <div className="mx-2">
                                     <img
                                         src={image}
-                                        className="h-72 bg-cover"
+                                        className="h-72 bg-cover rounded-3xl"
                                     />
                                 </div>
                             </swiper-slide>
