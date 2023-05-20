@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import Waves from "../components/Waves";
 import { register } from "swiper/element/bundle";
+import Gallery from "../components/Gallery";
 
 register();
 const images = [
