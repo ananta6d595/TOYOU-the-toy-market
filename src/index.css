@@ -17,5 +17,6 @@
 /* raw CSS */
 .bg-image{
     background: url('https://babystreet.althemist.com/wp-content/uploads/2019/02/scene.jpg');
-    background-size: cover;
+    background-size: contain;
+
 }

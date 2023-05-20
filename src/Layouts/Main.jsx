@@ -5,7 +5,7 @@ import NavigationBar from "../Shared/Navbar/NavigationBar";
 const Main = () => {
     return (
         <div>
-            <div className="bg-image">
+            <div >
                 <NavigationBar></NavigationBar>
                 <Outlet></Outlet>
                 <Footer></Footer>

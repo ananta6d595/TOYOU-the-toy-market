@@ -1,8 +1,8 @@
 
 const Footer = () => {
     return (
-        <div className="bg-cyan-800 bg-opacity-50">
-            <div>
+        <div className=" bg-image">
+            <div className="bg-cyan-800 bg-opacity-50">
                 <div className="  bg-opacity-60 stroke-transparent ">
                     <div className="relative flex container  px-4 py-5 md:px-14">
                         <img
@@ -31,58 +31,64 @@ const Footer = () => {
                             </div>
                         </div>
                     </div>
-                </div>
-                <footer className="  footer container p-10  text-slate-200">
-                    <div>
-                        <div className=" bg-cyan-900 rounded-3xl px-4 py-6 border-8 border-white">
-                            <h1 className="font-semibold text-5xl text-white ">
-                                TO<span className="text-orange-400">Y</span>OU
-                            </h1>
+
+                    <footer className="  footer container p-10  text-slate-200">
+                        <div>
+                            <div className=" bg-cyan-900 rounded-3xl px-4 py-6 border-8 border-white">
+                                <h1 className="font-semibold text-5xl text-white ">
+                                    TO<span className="text-orange-400">Y</span>
+                                    OU
+                                </h1>
+                            </div>
+                            <p className="font-medium text-base text-slate-200 ms-4">
+                                Making toys since 2000
+                            </p>
                         </div>
-                        <p className="font-medium text-base text-slate-200">
-                            Making toys since 2000
-                        </p>
-                    </div>
-                    <div>
-                        <span className="footer-title">Product</span>
-                        <a className="link link-hover">Prototype</a>
-                        <a className="link link-hover">Plans & Pricing</a>
-                        <a className="link link-hover">Customers</a>
-                        <a className="link link-hover">Advertisement</a>
-                    </div>
-                    <div>
-                        <span className="footer-title">Company</span>
-                        <a className="link link-hover">About us</a>
-                        <a className="link link-hover">Contact</a>
-                        <a className="link link-hover">Jobs</a>
-                        <a className="link link-hover">Latest News</a>
-                    </div>
-                    <div>
-                        <span className="footer-title">Legal</span>
-                        <a className="link link-hover">Terms of use</a>
-                        <a className="link link-hover">Privacy policy</a>
-                        <a className="link link-hover">Cookie policy</a>
-                    </div>
-                    <div>
-                        <span className="footer-title">Support & Contact</span>
-                        <a className="link link-hover">Help Desk</a>
-                        <a className="link link-hover">Become a Partner</a>{" "}
-                        <a className="link link-hover">
-                            524 Broadway ,
-                            <br /> NYC <br />
-                            +1 777 - 978 - 5570
-                        </a>
-                    </div>
-                </footer>
-            </div>
-            <div className="divide-y sm:max-w-xl md:max-w-full lg:max-w-screen-xl mx-auto bg-slate-200 h-[0.5px]  mb-9" />
-            <div className=" md:flex md:justify-between sm:max-w-xl md:max-w-full lg:max-w-screen-xl mx-auto px-10 md:px-14 text-gray-300 font-thin">
-                <div>
-                    @2023 <span className="font-semibold">Ananta</span>. All
-                    Rights Reserved
+                        <div>
+                            <span className="font-extrabold text-lg text-white">Product</span>
+                            <a className="link link-hover">Prototype</a>
+                            <a className="link link-hover">Plans & Pricing</a>
+                            <a className="link link-hover">Customers</a>
+                            <a className="link link-hover">Advertisement</a>
+                        </div>
+                        <div>
+                            <span className="font-extrabold text-lg text-white">Company</span>
+                            <a className="link link-hover">About us</a>
+                            <a className="link link-hover">Contact</a>
+                            <a className="link link-hover">Jobs</a>
+                            <a className="link link-hover">Latest News</a>
+                        </div>
+                        <div>
+                            <span className="font-extrabold text-lg text-white">Legal</span>
+                            <a className="link link-hover">Terms of use</a>
+                            <a className="link link-hover">Privacy policy</a>
+                            <a className="link link-hover">Cookie policy</a>
+                        </div>
+                        <div>
+                            <span className="font-extrabold text-lg text-white">
+                                Support & Contact
+                            </span>
+                            <a className="link link-hover">Help Desk</a>
+                            <a className="link link-hover">
+                                Become a Partner
+                            </a>{" "}
+                            <a className="link link-hover">
+                                524 Broadway ,
+                                <br /> NYC <br />
+                                +1 777 - 978 - 5570
+                            </a>
+                        </div>
+                    </footer>
                 </div>
-                <div>
-                    Powered by <span className="font-semibold">Ananta</span>
+                <div className="divide-y sm:max-w-xl md:max-w-full lg:max-w-screen-xl mx-auto bg-slate-200 h-[0.5px]  mb-9" />
+                <div className=" md:flex md:justify-between sm:max-w-xl md:max-w-full lg:max-w-screen-xl mx-auto px-10 md:px-14 text-gray-300 font-thin">
+                    <div>
+                        @2023 <span className="font-semibold">Ananta</span>. All
+                        Rights Reserved
+                    </div>
+                    <div>
+                        Powered by <span className="font-semibold">Ananta</span>
+                    </div>
                 </div>
             </div>
         </div>
