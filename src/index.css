@@ -5,7 +5,7 @@
 
 @layer components {
   .container {
-    @apply   py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl px-4 md:px-14 ;
+    @apply    mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl ;
   }
 
   .navigation-text{

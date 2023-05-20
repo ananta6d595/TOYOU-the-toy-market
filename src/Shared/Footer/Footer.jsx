@@ -1,10 +1,10 @@
 
 const Footer = () => {
     return (
-        <>
+        <div className="bg-cyan-800 bg-opacity-50">
             <div>
-                <div className=" bg-sky-300 bg-opacity-60 stroke-transparent ">
-                    <div className="relative flex container">
+                <div className="  bg-opacity-60 stroke-transparent ">
+                    <div className="relative flex container  px-4 py-5 md:px-14">
                         <img
                             className="absolute h-32 bottom-[2px] left-[40px]"
                             src="https://ouch-cdn2.icons8.com/V39WdbzUyJ5ivtk_K8zfSRYINH_yZdQsOttGgVOJ2vE/rs:fit:256:281/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9wbmcvNjI4/LzUzN2ZhNTM2LTgz/Y2QtNDBmZC1iMjRi/LWEyMDFkNmVlOTVl/Yi5wbmc.png"
@@ -32,7 +32,7 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
-                <footer className=" bg-cyan-800 footer container p-10  text-slate-200">
+                <footer className="  footer container p-10  text-slate-200">
                     <div>
                         <div className=" bg-cyan-900 rounded-3xl px-4 py-6 border-8 border-white">
                             <h1 className="font-semibold text-5xl text-white ">
@@ -75,8 +75,8 @@ const Footer = () => {
                     </div>
                 </footer>
             </div>
-            <div className="divide-y sm:max-w-xl md:max-w-full lg:max-w-screen-xl mx-auto bg-slate-400 h-[0.5px]  mb-9" />
-            <div className=" md:flex md:justify-between sm:max-w-xl md:max-w-full lg:max-w-screen-xl mx-auto px-10 md:px-14 text-gray-500 font-thin">
+            <div className="divide-y sm:max-w-xl md:max-w-full lg:max-w-screen-xl mx-auto bg-slate-200 h-[0.5px]  mb-9" />
+            <div className=" md:flex md:justify-between sm:max-w-xl md:max-w-full lg:max-w-screen-xl mx-auto px-10 md:px-14 text-gray-300 font-thin">
                 <div>
                     @2023 <span className="font-semibold">Ananta</span>. All
                     Rights Reserved
@@ -85,7 +85,7 @@ const Footer = () => {
                     Powered by <span className="font-semibold">Ananta</span>
                 </div>
             </div>
-        </>
+        </div>
     );
 };
 

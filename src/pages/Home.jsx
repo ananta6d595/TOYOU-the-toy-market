@@ -1,128 +1,78 @@
-
 import Waves from "../components/Waves";
+import { register } from "swiper/element/bundle";
 
-// const images = [
-//     "https://images.unsplash.com/photo-1505935428862-770b6f24f629?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&h=600&w=1332&q=80",
-//     "https://images.unsplash.com/photo-1604908554025-e477d54e85e0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&h=600&w=1332&q=80",
-//     "https://images.unsplash.com/photo-1618219878829-8afd92751bed?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&h=600&w=1332&q=80",
-//     "https://plus.unsplash.com/premium_photo-1672242676661-5cbaaffc06fa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&h=600&w=1332&q=80",
-//     "https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&h=600&w=1332&q=80",
-// ];
+register();
+const images = [
+    "https://i.ibb.co/cXQnJSK/wallpapersden-com-forza-horizon-lego-4800x2700.jpg",
+    "https://i.ibb.co/j50skJs/1920x1080-575503-the-lego-movie.jpg",
+    "https://i.ibb.co/vVNZtL0/1352000-lego-hd-wallpaper-1920x1080-for-phones.jpg",
+    "https://i.ibb.co/t2bv4ZT/1351957-new-lego-hd-wallpaper-1920x1080-full-hd.jpg",
+    "https://i.ibb.co/PtZqY1f/1352020-lego-hd-wallpaper-3840x2160-for-iphone.jpg",
+    "https://i.ibb.co/164PjHV/wp2976644-star-wars-lego-wallpaper.jpg",
+    "https://i.ibb.co/w4G9Ph3/565936-the-lego-wallpaper.jpg",
+    "https://i.ibb.co/DM8KgtS/1352017-lego-hd-wallpaper-2000x1333-720p.jpg",
+    "https://i.ibb.co/PmPBBrM/lego-mclaren-senna-2019-5k-HD.jpg",
+    "https://i.ibb.co/ThkKzCn/pxfuel.jpg",
+    "https://i.ibb.co/G7ty6Vg/wp2976645-star-wars-lego-wallpaper.jpg",
+];
 
 const Home = () => {
     return (
         <>
-            <div className="relative h-[530px] ">
+            <div className=" h-[230px] md:h-[650px] container px-4 md:px-14">
                 <img
                     src="https://i.ibb.co/DDT56hC/lego-banner.png"
                     alt=""
-                    className=" absolute mx-auto w-full md:w-[100%] h-[600px] object-cover "
+                    className=" absolute h-[300px] md:h-[730px] left-0 w-full object-cover "
                 />
+                <div className="absolute h-[300px] md:h-[730px] left-0 w-full bg-slate-950 opacity-30"></div>
+                <div className="absolute left-0 text-white h-[300px] md:h-[730px] w-full flex justify-center items-center">
+                    <div className="text-center">
+                        <h1 className="font-bold text-3xl md:text-6xl mb-5">
+                            Hello to the world of Legos
+                        </h1>
+                        <p className="text-xl md:text-3xl mb-5">
+                            Find the piece you want
+                        </p>
+                        <div className="relative">
+                            <input
+                                type="text"
+                                className="rounded-full input input-bordered input-info w-full max-w-xl"
+                                placeholder="Search"
+                            />
+                            {/* <button className="absolute left-3/4 md:left-[80%]  text-gray-400">Search</button> */}
+                        </div>
+                    </div>
+                </div>
             </div>
             <Waves></Waves>
+            <h1 className="text-center font-bold text-5xl">You will love to build</h1>
+            <div className="container">
+                <swiper-container
+                    slides-per-view="3"
+                    navigation="true"
+                    pagination="true"
+                    autoplay
+                    speed="1000"
+                    loop="true"
+                    css-mode="true"
+                >
+                    {images.map((image, index) => {
+                        return (
+                            <swiper-slide key={index} >
+                                <div className="mx-2 rounded-lg">
+                                    <img
+                                        src={image}
+                                        className="h-72 bg-cover"
+                                    />
+                                </div>
+                            </swiper-slide>
+                        );
+                    })}
+                </swiper-container>
+            </div>
         </>
     );
 };
 
 export default Home;
-
-// <div className="md:min-h-[600px] container mb-40">
-//     {/* {loader ? (
-//         <Spinner></Spinner>
-//     ) : ( */}
-//         <div>
-//             <div className="relative">
-//                 <swiper-container
-//                     slides-per-view="1"
-//                     autoplay
-//                     speed="500"
-//                     loop="true"
-//                     css-mode="true">
-//                     {images.map((image, index) => {
-//                         return (
-//                             <swiper-slide key={index}>
-//                                 <img src={image} />
-//                                 <div className="absolute h-[200px] md:h-[300px] w-full md:w-[650px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-lg bg-amber-50 bg-opacity-70 md:blur md:backdrop-blur"></div>
-//                                 <div className="absolute top-1/2 left-5 md:left-1/2  md:-translate-x-1/2 -translate-y-1/2 ">
-//                                     <h1 className="md:w-[98%]  font-bold text-xl md:text-5xl text-left md:text-center text-emerald-900">
-//                                         Want to cook like a Pro?
-//                                         <br></br>{" "}
-//                                         <span className="text-pink-700">
-//                                             Chef's Rep
-//                                         </span>{" "}
-//                                         <br></br> has your your back with famous
-//                                         American chefs.
-//                                     </h1>
-//                                 </div>
-//                             </swiper-slide>
-//                         );
-//                     })}
-//                 </swiper-container>
-//             </div>
-{
-    /*  section 2 Chef */
-}
-// <Wave
-//     fill="#f79902"
-//     paused={false}
-//     options={{
-//         height: 20,
-//         amplitude: 20,
-//         speed: 0.15,
-//         points: 3,
-//     }}
-// />
-// <div className="lg:text-center my-28 ">
-//     <h1 className="font-medium text-2xl lg:text-5xl mb-6">
-//         {" "}
-//         Our Chef's
-//     </h1>
-//     <p className="text-slate-700 w-72 lg:w-96 md:mx-auto">
-//         {" "}
-//         Chef's rep has some awesome Chefs around America. Checkout
-//         their recipes and cook like pros.
-//     </p>
-//     <div className="grid md:grid-cols-2 gap-7 md:mx-10 my-12 ">
-//         {chefs?.map((chef) => (
-//             <ChefCard key={chef.id} chef={chef}></ChefCard>
-//         ))}
-//     </div>
-// </div>
-
-{
-    /* section 3  */
-}
-//             <div className="lg:text-center mb-32">
-//                 <h1 className="font-medium h-16 text-2xl lg:text-5xl mb-6 bg-amber-100">
-//                     Trending recipes
-//                 </h1>
-//                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 justify-center items-center">
-//                     {trend?.trend_id?.map((single_recipe_id) => {
-//                         return (
-//                             <TrendingCard
-//                                 key={single_recipe_id}
-//                                 single_recipe_id={
-//                                     single_recipe_id
-//                                 }></TrendingCard>
-//                         );
-//                     })}
-//                 </div>
-//             </div>
-//             <div className="lg:text-center">
-//                 <h1 className="font-medium text-2xl lg:text-5xl mb-6">
-//                     Reviews
-//                 </h1>
-//                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 justify-center items-center">
-//                     {reviews?.map((reviewInfo) => {
-//                         return (
-//                             <ReviewCard
-//                                 key={reviewInfo}
-//                                 reviewInfo={reviewInfo}></ReviewCard>
-//                         );
-//                     })}
-//                 </div>
-//             </div>
-//         </div>
-//     {/* )} */}
-//     {/* Banner */}
-// </div>;

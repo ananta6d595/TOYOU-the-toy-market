@@ -13,9 +13,8 @@ const NavigationBar = () => {
 
 
     return (
-        <nav className="md:flex justify-between items-center px-4 py-5 mx-auto  sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-14">
+        <nav className="md:flex justify-between items-center container  px-4 py-4 md:px-14">
             <div className="flex items-center flex-shrink-0">
-
                 <div className=" bg-cyan-800 rounded-3xl px-4 py-2 border-8 border-white">
                     <h1 className="font-semibold text-4xl text-white ">
                         TO<span className="text-orange-400">Y</span>OU
