@@ -19,7 +19,7 @@ const Waves = () => {
                 </div>
                 <div className="absolute w-full">
                     <Wave
-                        fill="#BEE4F4"
+                        fill="#d2ebf0"
                         paused={false}
                         options={{
                             height: 50,

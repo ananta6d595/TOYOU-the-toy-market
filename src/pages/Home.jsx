@@ -1,3 +1,5 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import Waves from "../components/Waves";
 import { register } from "swiper/element/bundle";
 
@@ -46,31 +48,16 @@ const Home = () => {
                 </div>
             </div>
             <Waves></Waves>
-            <h1 className="text-center font-bold text-5xl">You will love to build</h1>
-            <div className="container">
-                <swiper-container
-                    slides-per-view="3"
-                    navigation="true"
-                    pagination="true"
-                    autoplay
-                    speed="1000"
-                    loop="true"
-                    css-mode="true"
-                >
-                    {images.map((image, index) => {
-                        return (
-                            <swiper-slide key={index} >
-                                <div className="mx-2 rounded-lg">
-                                    <img
-                                        src={image}
-                                        className="h-72 bg-cover"
-                                    />
-                                </div>
-                            </swiper-slide>
-                        );
-                    })}
-                </swiper-container>
-            </div>
+            <h1 className="text-center font-bold text-5xl mb-6">
+                You will{" "}
+                <FontAwesomeIcon
+                    icon={faHeart}
+                    size="lg"
+                    style={{ color: "#eb0000" }}
+                />{" "}
+                to build
+            </h1>
+            <Gallery images={images}></Gallery>
         </>
     );
 };
