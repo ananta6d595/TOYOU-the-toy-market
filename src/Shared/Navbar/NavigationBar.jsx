@@ -1,5 +1,6 @@
 import { useContext, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../provider/AuthProvider";
 
 const NavigationBar = () => {
     const [isOpen, setIsOpen] = useState(false);

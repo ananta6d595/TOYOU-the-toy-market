@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyC1Hhsr0m3OTJXuTuSng-yHW08MXwgIClM",
-    authDomain: "lego-toys-9c8f5.firebaseapp.com",
-    projectId: "lego-toys-9c8f5",
-    storageBucket: "lego-toys-9c8f5.appspot.com",
-    messagingSenderId: "942160411271",
-    appId: "1:942160411271:web:9a4564466a5b1fd645d622"
+    apiKey: import.meta.env.VITE_apiKey,
+    authDomain: import.meta.env.VITE_authDomain,
+    projectId: import.meta.env.VITE_projectId,
+    storageBucket: import.meta.env.VITE_storageBucket,
+    messagingSenderId: import.meta.env.VITE_messagingSenderId,
+    appId: import.meta.env.VITE_appId
 };
 
 // Initialize Firebase
