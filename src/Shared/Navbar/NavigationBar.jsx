@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 const NavigationBar = () => {
     const [isOpen, setIsOpen] = useState(false);
-    // const { user, logOut } = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
 
     const handelLogout = () => {
         logOut()
@@ -96,7 +96,7 @@ const NavigationBar = () => {
                     </NavLink>
                 </div>
                 <div className="flex items-center gap-6">
-                    {/* {user ? (
+                    {user ? (
                         <div
                             className="tooltip tooltip-bottom "
                             data-tip={user?.displayName}>
@@ -125,7 +125,7 @@ const NavigationBar = () => {
                                 Login
                             </button>
                         </Link>
-                    )} */}
+                    )}
                 </div>
             </div>
         </nav>
