@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { NavLink, useLoaderData } from "react-router-dom";
 
 const AllToys = () => {
     const data = useLoaderData();
@@ -56,6 +56,7 @@ const AllToys = () => {
                         {/* row 1 */}
 
                         {toys?.map((toy) => {
+                            // console.log(">>>>>>",toy._id);
                             return (
                                 <tr key={toy._id}>
                                     <td>
@@ -70,9 +71,11 @@ const AllToys = () => {
                                     <td>{toy?.price} USD </td>
                                     <td>{toy?.available_quantity}</td>
                                     <th>
-                                        <button className="btn btn-accent hover:btn-info">
-                                            details
-                                        </button>
+                                        <NavLink to={`/toy/${toy._id}`}>
+                                            <button className="btn btn-accent hover:btn-info">
+                                                details
+                                            </button>
+                                        </NavLink>
                                     </th>
                                 </tr>
                             );

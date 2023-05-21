@@ -38,7 +38,7 @@ const Home = () => {
                         <p className="text-xl md:text-3xl mb-5">
                             Find the piece you want
                         </p>
-                        
+
                     </div>
                 </div>
             </div>
@@ -54,7 +54,7 @@ const Home = () => {
             </h1>
             <Gallery images={images}></Gallery>
             <h1 className="text-center font-bold text-5xl mb-6">Categories</h1>
-            {/* <CategoriesTabs></CategoriesTabs> */}
+            <CategoriesTabs></CategoriesTabs>
 
             {/* trending */}
             <h1 className="text-center font-bold text-5xl mb-6">Trending</h1>
