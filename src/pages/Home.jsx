@@ -38,14 +38,7 @@ const Home = () => {
                         <p className="text-xl md:text-3xl mb-5">
                             Find the piece you want
                         </p>
-                        <div className="relative">
-                            <input
-                                type="text"
-                                className="rounded-full input input-bordered input-info w-full max-w-xl"
-                                placeholder="Search"
-                            />
-                            {/* <button className="absolute left-3/4 md:left-[80%]  text-gray-400">Search</button> */}
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -60,15 +53,13 @@ const Home = () => {
                 to build
             </h1>
             <Gallery images={images}></Gallery>
-            <h1 className="text-center font-bold text-5xl mb-6">
-                Categories
-            </h1>
+            <h1 className="text-center font-bold text-5xl mb-6">Categories</h1>
             {/* <CategoriesTabs></CategoriesTabs> */}
 
             {/* trending */}
-            
+            <h1 className="text-center font-bold text-5xl mb-6">Trending</h1>
             {/* user review */}
-
+            <h1 className="text-center font-bold text-5xl mb-6">Reviews</h1>
         </>
     );
 };
