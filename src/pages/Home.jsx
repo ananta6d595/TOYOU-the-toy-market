@@ -63,7 +63,12 @@ const Home = () => {
             <h1 className="text-center font-bold text-5xl mb-6">
                 Categories
             </h1>
-            <CategoriesTabs></CategoriesTabs>
+            {/* <CategoriesTabs></CategoriesTabs> */}
+
+            {/* trending */}
+            
+            {/* user review */}
+
         </>
     );
 };
