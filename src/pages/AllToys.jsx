@@ -55,20 +55,20 @@ const AllToys = () => {
                     <tbody>
                         {/* row 1 */}
 
-                        {toys.map((toy) => {
+                        {toys?.map((toy) => {
                             return (
                                 <tr key={toy._id}>
                                     <td>
                                         <div className=" ps-9 ">
                                             <p className="font-bold w-[300px] whitespace-normal">
-                                                {toy.toy_name}
+                                                {toy?.toy_name}
                                             </p>
                                         </div>
                                     </td>
-                                    <td>{toy.seller_name}</td>
-                                    <td>{toy.sub_category}</td>
-                                    <td>{toy.price} USD </td>
-                                    <td>{toy.available_quantity}</td>
+                                    <td>{toy?.seller_name}</td>
+                                    <td>{toy?.sub_category}</td>
+                                    <td>{toy?.price} USD </td>
+                                    <td>{toy?.available_quantity}</td>
                                     <th>
                                         <button className="btn btn-accent hover:btn-info">
                                             details
