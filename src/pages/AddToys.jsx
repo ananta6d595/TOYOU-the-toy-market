@@ -1,48 +1,56 @@
 import React, { useContext } from "react";
 
 import { AuthContext } from "../provider/AuthProvider";
+import { Form } from "react-router-dom";
 
 const AddToys = () => {
     const { user, loading } = useContext(AuthContext);
 
     const handleAddToys = (event) => {
-        event.preventDefault();
+        // event.preventDefault();
 
         const form = event.target;
-        
-        const image = form.image;
-        const name = form.name;
-        const seller = user?.displayName;
-        const email = user?.email;
-        const category = form.category;
-        const price = form.price;
-        const rating = form.rating;
-        const quantity = form.quantity;
-        const description = form.description;
+
+        const picture = form.image.value;
+        const toy_name = form.name.value;
+        const seller_name = user?.displayName;
+        const seller_email = user?.email;
+        const sub_category = form.category.value;
+        const price = form.price.value;
+        const rating = form.rating.value;
+        const available_quantity = form.quantity.value;
+        const detail_description = form.description.value;
 
         const toyDetails = {
-            image,
-            name,
+            sub_category,
+            picture,
+            toy_name,
+            seller_name,
+            seller_email,
+            price,
+            rating,
+            available_quantity,
+            detail_description,
         };
 
         console.log(toyDetails);
 
-        // fetch("http://localhost:5000/addToys", {
-        //     method: "POST",
-        //     headers: {
-        //         "content-type": "application/json",
-        //     },
-        //     body: JSON.stringify(toyDetails),
-        // })
-        //     .then((res) => res.json())
-        //     .then((data) => console.log(data));
+        fetch("http://localhost:5000/addToys", {
+            method: "POST",
+            headers: {
+                "content-type": "application/json",
+            },
+            body: JSON.stringify(toyDetails),
+        })
+            .then((res) => res.json())
+            .then((data) => console.log(data));
     };
 
     return (
         <div className="container mb-24">
             <h1 className="text-center font-bold text-5xl mb-6">Add Toys</h1>
             <div className="card-body">
-                <form onSubmit={handleAddToys}>
+                <Form onSubmit={handleAddToys}>
                     <div className="grid md:grid-cols-2 gap-4 mb-12">
                         <div className="form-control">
                             <label className="label">
@@ -129,7 +137,7 @@ const AddToys = () => {
                                 </span>
                             </label>
                             <input
-                                type="text"
+                                type="number"
                                 name="quantity"
                                 placeholder="Type here"
                                 className="input input-bordered"
@@ -149,14 +157,14 @@ const AddToys = () => {
                             />
                         </div>
                     </div>
-                </form>
-                <div className="form-control mt-6">
-                    <input
-                        type="submit"
-                        value="Add Toy"
-                        className="btn btn-accent hover:btn-success btn-block"
-                    />
-                </div>
+                    <div className="form-control mt-6">
+                        <input
+                            type="submit"
+                            value="Add Toy"
+                            className="btn btn-accent hover:btn-success btn-block"
+                        />
+                    </div>
+                </Form>
             </div>
         </div>
     );

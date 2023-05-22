@@ -10,6 +10,8 @@ import PrivateRoute from "./PrivateRoute";
 import Blog from "../pages/Blogs";
 import AddToys from "../pages/AddToys";
 import MyToys from "../pages/MyToys";
+import UpdateToys from "../pages/UpdateToys";
+import MyToysLayOut from "../Layouts/MyToysLayOut";
 
 const router = createBrowserRouter([
     {
@@ -20,6 +22,14 @@ const router = createBrowserRouter([
             {
                 path: "/",
                 element: <Home></Home>,
+            },
+            {
+                path: "/login",
+                element: <Login></Login>,
+            },
+            {
+                path: "/registration",
+                element: <Registration></Registration>,
             },
             {
                 path: "/allToys",
@@ -37,24 +47,45 @@ const router = createBrowserRouter([
                     fetch(`http://localhost:5000/toys/${params.id}`),
             },
             {
-                path: "/addToys",
-                element: <AddToys></AddToys>,
+                path: "/myToys",
+                element: <MyToysLayOut></MyToysLayOut>,
+                // errorElement: <ErrorPage></ErrorPage>,
+                children: [
+                    {
+                        // path  "/" die start hoile sheta root route hishabe dhore.
+                        path: "/myToys",
+                        element: (
+                            <PrivateRoute>
+                                <MyToys></MyToys>
+                            </PrivateRoute>
+                        ),
+                        loader: () => fetch("http://localhost:5000/toys"),
+                    },
+                    {
+                        // path  "/" die start hoile sheta root route hishabe dhore.
+                        path: "update/:id",
+                        element: (
+                            <PrivateRoute>
+                                <UpdateToys></UpdateToys>
+                            </PrivateRoute>
+                        ),
+                        loader: ({ params }) =>
+                            fetch(`http://localhost:5000/toys/${params.id}`),
+                    },
+                ],
             },
             {
-                path: "/myToys",
-                element: <MyToys></MyToys>,
+                path: "/addToys",
+                element: (
+                    <PrivateRoute>
+                        <AddToys></AddToys>
+                    </PrivateRoute>
+                ),
             },
+
             {
                 path: "/blog",
                 element: <Blog></Blog>,
-            },
-            {
-                path: "/login",
-                element: <Login></Login>,
-            },
-            {
-                path: "/registration",
-                element: <Registration></Registration>,
             },
         ],
     },

@@ -4,13 +4,13 @@ import NavigationBar from "../Shared/Navbar/NavigationBar";
 
 const Main = () => {
     return (
-        <div>
+        <>
             <div className="bg-[#d2ebf0]">
                 <NavigationBar></NavigationBar>
                 <Outlet></Outlet>
                 <Footer></Footer>
             </div>
-        </div>
+        </>
     );
 };
 
