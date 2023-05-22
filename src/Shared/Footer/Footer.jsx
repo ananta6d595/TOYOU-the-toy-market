@@ -83,11 +83,11 @@ const Footer = () => {
                 <div className="divide-y sm:max-w-xl md:max-w-full lg:max-w-screen-xl mx-auto bg-slate-200 h-[0.5px]  mb-9" />
                 <div className=" md:flex md:justify-between sm:max-w-xl md:max-w-full lg:max-w-screen-xl mx-auto px-10 md:px-14 text-gray-300 font-thin">
                     <div>
-                        @2023 <span className="font-semibold">Ananta</span>. All
+                        @2023 <span className="font-semibold">A6d5</span>. All
                         Rights Reserved
                     </div>
                     <div>
-                        Powered by <span className="font-semibold">Ananta</span>
+                        Powered by <span className="font-semibold">A6d5</span>
                     </div>
                 </div>
             </div>

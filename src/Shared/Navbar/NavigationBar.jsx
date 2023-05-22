@@ -69,7 +69,7 @@ const NavigationBar = () => {
                         All Toys
                     </NavLink>
                     <NavLink
-                        to="/"
+                        to="/myToys"
                         className={({ isActive }) =>
                             isActive
                                 ? "text-xl px-4 text-cyan-800 font-semibold "
@@ -78,7 +78,7 @@ const NavigationBar = () => {
                         My Toys
                     </NavLink>
                     <NavLink
-                        to="/"
+                        to="/addToys"
                         className={({ isActive }) =>
                             isActive
                                 ? "text-xl px-4 text-cyan-800 font-semibold "
