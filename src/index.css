@@ -5,7 +5,7 @@
 
 @layer components {
   .container {
-    @apply    mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl ;
+    @apply mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl ;
   }
 
   .navigation-text{
@@ -17,6 +17,6 @@
 /* raw CSS */
 .bg-image{
     background: url('https://babystreet.althemist.com/wp-content/uploads/2019/02/scene.jpg');
-    background-size: contain;
+
 
 }

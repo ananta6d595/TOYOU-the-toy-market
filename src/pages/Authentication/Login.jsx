@@ -7,7 +7,6 @@ import {
     GoogleAuthProvider,
 } from "firebase/auth";
 
-// import { GoogleOutlined, GithubOutlined } from "@ant-design/icons";
 
 const Login = () => {
     const [error, setError] = useState(null);
@@ -39,7 +38,6 @@ const Login = () => {
 
         signInUser(email, password)
             .then((res) => {
-                // const logInUser = res.user;
                 navigate(from, { replace: true });
             })
             .catch((error) => {

@@ -1,20 +1,16 @@
-
 const Footer = () => {
     return (
-        <div className=" bg-image">
+        <div className=" bg-image  bg-cover md:bg-contain">
             <div className="bg-cyan-800 bg-opacity-50">
-                <div className="  bg-opacity-60 stroke-transparent ">
-                    <div className="relative flex container  px-4 py-5 md:px-14">
+
+                    <div className="relative md:flex md:container  px-4 py-5 md:px-14">
                         <img
-                            className="absolute h-32 bottom-[2px] left-[40px]"
+                            className=" ms-8 md:ms-0 md:absolute h-32 md:bottom-[2px] md:left-[40px]"
                             src="https://ouch-cdn2.icons8.com/V39WdbzUyJ5ivtk_K8zfSRYINH_yZdQsOttGgVOJ2vE/rs:fit:256:281/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9wbmcvNjI4/LzUzN2ZhNTM2LTgz/Y2QtNDBmZC1iMjRi/LWEyMDFkNmVlOTVl/Yi5wbmc.png"
                         />{" "}
-                        {/* <img
-                            className="absolute h-32 -bottom-[25px] -left-[10px]"
-                            src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExMTIzMjQ4MDYzNmQxOGE3YzQwMTNiYzg5MjYyYmQwMTE4YWY5YzdjNSZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PXM/2si2ObWL19ZR9EFVX2/giphy.gif"
-                        />{" "} */}
-                        <div className="ms-36 md:flex flex-1 justify-between gap-6">
-                            <div className="text-slate-100 w-9/12">
+                        
+                        <div className="ms-8 md:ms-28 md:flex md:flex-1 justify-between gap-6">
+                            <div className="text-slate-100 w-9/12 pb-10 " >
                                 <h2 className="font-bold text-2xl text-violet-900">
                                     Are you a seller ?
                                 </h2>
@@ -24,11 +20,9 @@ const Footer = () => {
                                 </p>{" "}
                             </div>
 
-                            <div className="recipe-button">
-                                <button className="btn bg-cyan-700 border-none hover:bg-sky-500 w-16">
-                                    Sell
-                                </button>
-                            </div>
+                            <button className="btn bg-cyan-700 border-none hover:bg-sky-500 w-24">
+                                Sell
+                            </button>
                         </div>
                     </div>
 
@@ -45,21 +39,27 @@ const Footer = () => {
                             </p>
                         </div>
                         <div>
-                            <span className="font-extrabold text-lg text-white">Product</span>
+                            <span className="font-extrabold text-lg text-white">
+                                Product
+                            </span>
                             <a className="link link-hover">Prototype</a>
                             <a className="link link-hover">Plans & Pricing</a>
                             <a className="link link-hover">Customers</a>
                             <a className="link link-hover">Advertisement</a>
                         </div>
                         <div>
-                            <span className="font-extrabold text-lg text-white">Company</span>
+                            <span className="font-extrabold text-lg text-white">
+                                Company
+                            </span>
                             <a className="link link-hover">About us</a>
                             <a className="link link-hover">Contact</a>
                             <a className="link link-hover">Jobs</a>
                             <a className="link link-hover">Latest News</a>
                         </div>
                         <div>
-                            <span className="font-extrabold text-lg text-white">Legal</span>
+                            <span className="font-extrabold text-lg text-white">
+                                Legal
+                            </span>
                             <a className="link link-hover">Terms of use</a>
                             <a className="link link-hover">Privacy policy</a>
                             <a className="link link-hover">Cookie policy</a>
@@ -79,7 +79,7 @@ const Footer = () => {
                             </a>
                         </div>
                     </footer>
-                </div>
+
                 <div className="divide-y sm:max-w-xl md:max-w-full lg:max-w-screen-xl mx-auto bg-slate-200 h-[0.5px]  mb-9" />
                 <div className=" md:flex md:justify-between sm:max-w-xl md:max-w-full lg:max-w-screen-xl mx-auto px-10 md:px-14 text-gray-300 font-thin">
                     <div>
