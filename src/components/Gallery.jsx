@@ -1,9 +1,17 @@
 import React from 'react';
+import Aos from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
+
 
 const Gallery = ({images}) => {
+        useEffect(() => {
+            Aos.init();
+        }, []);
+
     return (
         <>
-            <div className="container mb-14">
+            <div className="container mb-14" data-aos="fade-left">
                 <swiper-container
                     slides-per-view="3"
                     navigation="true"

@@ -4,10 +4,20 @@ import Waves from "../components/Waves";
 import { register } from "swiper/element/bundle";
 import Gallery from "../components/Gallery";
 import CategoriesTabs from "../components/CategoriesTabs";
+import useTitle from "../hooks/useTitle";
+import Aos from 'aos';
+import 'aos/dist/aos.css'
+import { useEffect } from "react";
+
 
 register();
 
 const Home = () => {
+    useTitle('Home');
+    useEffect(() => {
+        Aos.init();
+    },[])
+
     const images = [
         "https://i.ibb.co/cXQnJSK/wallpapersden-com-forza-horizon-lego-4800x2700.jpg",
         "https://i.ibb.co/j50skJs/1920x1080-575503-the-lego-movie.jpg",
@@ -23,7 +33,9 @@ const Home = () => {
     ];
     return (
         <>
-            <div className=" h-[230px] md:h-[650px] container px-4 md:px-14">
+            <div
+                className=" h-[230px] md:h-[650px] container px-4 md:px-14"
+                data-aos="fade-up">
                 <img
                     src="https://i.ibb.co/DDT56hC/lego-banner.png"
                     alt=""
@@ -38,11 +50,10 @@ const Home = () => {
                         <p className="text-xl md:text-3xl mb-5">
                             Find the piece you want
                         </p>
-
                     </div>
                 </div>
             </div>
-            <Waves></Waves>
+            <Waves ></Waves>
             <h1 className="text-center font-bold text-5xl mb-6">
                 You will{" "}
                 <FontAwesomeIcon
@@ -52,7 +63,7 @@ const Home = () => {
                 />{" "}
                 to build
             </h1>
-            <Gallery images={images}></Gallery>
+            <Gallery images={images} ></Gallery>
             <h1 className="text-center font-bold text-5xl mb-6">Categories</h1>
             <CategoriesTabs></CategoriesTabs>
 

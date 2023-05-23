@@ -1,6 +1,8 @@
 import React from "react";
 
 const Blog = () => {
+
+    useTitle('Blog');
     return (
         <div>
             <div className=" h-[150px] mb-32 bg-emerald-50">

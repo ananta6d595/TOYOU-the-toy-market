@@ -3,8 +3,11 @@ import { NavLink, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 import MyToysRow from "./MyToysRow";
 import Swal from "sweetalert2";
+import useTitle from "../../hooks/useTitle";
 
 const MyToys = () => {
+    // for dynamic tab title
+    useTitle('My Toys');
     //get user data for my toys' to show only logged in user's added toys.
     let [toys, setToys] = useState([]);
     const { user } = useContext(AuthContext);

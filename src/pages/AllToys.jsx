@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { NavLink, useLoaderData } from "react-router-dom";
+import useTitle from "../hooks/useTitle";
 
 const AllToys = () => {
     const data = useLoaderData();
     let [toys, setToys] = useState(data.slice(0, 20) || []);
-
+    useTitle("All Toys");
     const onSearchHandler = (event) => {
         const token = event.target.value;
 

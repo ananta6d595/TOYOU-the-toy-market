@@ -6,9 +6,11 @@ import {
 
     GoogleAuthProvider,
 } from "firebase/auth";
+import useTitle from "../../hooks/useTitle";
 
 
 const Login = () => {
+    useTitle('Login');
     const [error, setError] = useState(null);
     const { auth, signInUser, setUser } = useContext(AuthContext);
     const navigate = useNavigate();

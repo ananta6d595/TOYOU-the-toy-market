@@ -1,22 +1,34 @@
 import { useEffect, useState } from "react";
 import { Tab } from "@headlessui/react";
+import Aos from "aos";
+import "aos/dist/aos.css";
+
 import TabToysCard from "./TabToysCard";
 
 const CategoriesTabs = () => {
+
     function classNames(...classes) {
         return classes.filter(Boolean).join(" ");
     }
-    const categories = ["LEGO City","LEGO Marvel Super Heroes","LEGO Star Wars","LEGO Speed Champions"];
+
+    const categories = [
+        "LEGO City",
+        "LEGO Marvel Super Heroes",
+        "LEGO Star Wars",
+        "LEGO Speed Champions",
+    ];
     const [toys, setToys] = useState([]);
     useEffect(() => {
+          Aos.init();
         fetch("http://localhost:5000/toys")
-            .then(res => res.json())
-            .then(data =>setToys(data));
-
+            .then((res) => res.json())
+            .then((data) => setToys(data));
     }, []);
 
     return (
-        <div className="container min-h-[400px] px-2 pb-16 sm:px-0">
+        <div
+            className="container min-h-[400px] px-2 pb-16 sm:px-0"
+            data-aos="fade-right">
             <Tab.Group>
                 <Tab.List className="w-full max-w-2xl mx-auto flex space-x-1 rounded-xl bg-blue-900/20 p-1">
                     {categories.map((category) => (
