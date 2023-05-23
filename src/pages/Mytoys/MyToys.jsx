@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { NavLink, useLoaderData } from "react-router-dom";
-import { AuthContext } from "../provider/AuthProvider";
+import { AuthContext } from "../../provider/AuthProvider";
+import MyToysRow from "./MyToysRow";
 
 const MyToys = () => {
     //get user data for my toys' to show only logged in user's added toys.
@@ -8,8 +9,6 @@ const MyToys = () => {
     const { user } = useContext(AuthContext);
     // load all data (would be great if I could pass user displayName to server and get specific user toys).
     let data = useLoaderData();
-
-
 
     // better to use set state function in useEffect to skip too much re-render error
     useEffect(() => {
@@ -20,16 +19,6 @@ const MyToys = () => {
             setToys(data);
         }
     }, [data]);
-
-    // useEffect(() => {
-    //     fetch("http://localhost:5000/toys")
-    //         .then((res) => res.json())
-    //         .then((data) => {
-    //             console.log(data);
-    //             // data = data?.filter((datum) => datum.seller_name == user?.displayName);
-    //             // setToys(data)
-    //         });
-    // }, []);
 
     // const onSearchHandler = (event) => {
     //     const token = event.target.value;
@@ -46,12 +35,16 @@ const MyToys = () => {
     //     }
     // };
 
+    // const HandelDelete = () => {
+
+    // }
+
     // console.log(toys);
     return (
         <div className="container mb-12">
             <h1 className="text-center font-bold text-5xl mb-8">
                 {" "}
-                {toys.seller_name} LEGO Toys
+                {toys?.seller_name} LEGO Toys
             </h1>
             {/* <h2 className="text-center">Search</h2> */}
             <div className="w-full text-center mb-8">
@@ -82,55 +75,10 @@ const MyToys = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {/* row 1 */}
-
-                        {toys?.map((toy) => {
-                            // console.log(">>>>>>",toy._id);
-                            return (
-                                <tr key={toy._id}>
-                                    <td>
-                                        <div className=" ps-9 ">
-                                            <p className="font-bold w-[300px] whitespace-normal">
-                                                {toy?.toy_name}
-                                            </p>
-                                        </div>
-                                    </td>
-                                    <td>{toy?.seller_name}</td>
-                                    <td>{toy?.sub_category}</td>
-                                    <td>{toy?.price} USD </td>
-                                    <td>{toy?.available_quantity}</td>
-                                    <th>
-                                        <NavLink to={`update/${toy._id}`}>
-                                            <button className="btn btn-accent hover:btn-info">
-                                                Update
-                                            </button>
-                                        </NavLink>
-                                    </th>
-                                    <th>
-                                        <NavLink to={`update/${toy._id}`}>
-                                            <button className="btn btn-accent hover:btn-info">
-                                                Delete
-                                            </button>
-                                        </NavLink>
-                                    </th>
-                                </tr>
-                            );
-                        })}
+                {toys?.map((toy) => (
+                            <MyToysRow key={toy?._id} toy={toy}></MyToysRow>
+                        ))}
                     </tbody>
-                    {/* foot */}
-                    <tfoot>
-                        <tr>
-                            <th className="md:ps-12">Toy Name</th>
-                            <th>Seller</th>
-                            <th>Sub-category</th>
-                            <th>Price</th>
-                            <th>
-                                Available <br /> Quantity
-                            </th>
-                            <th></th>
-                            <th></th>
-                        </tr>
-                    </tfoot>
                 </table>
             </div>
         </div>

@@ -9,7 +9,7 @@ import Registration from "../pages/Authentication/Registration";
 import PrivateRoute from "./PrivateRoute";
 import Blog from "../pages/Blogs";
 import AddToys from "../pages/AddToys";
-import MyToys from "../pages/MyToys";
+import MyToys from "../pages/Mytoys/MyToys";
 import UpdateToys from "../pages/UpdateToys";
 import MyToysLayOut from "../Layouts/MyToysLayOut";
 
