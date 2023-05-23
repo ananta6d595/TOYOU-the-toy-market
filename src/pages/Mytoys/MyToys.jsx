@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { NavLink, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 import MyToysRow from "./MyToysRow";
+import Swal from "sweetalert2";
 
 const MyToys = () => {
     //get user data for my toys' to show only logged in user's added toys.
@@ -35,9 +36,49 @@ const MyToys = () => {
     //     }
     // };
 
-    // const HandelDelete = () => {
+    const HandelDelete = (id) => {
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!",
+            showClass: {
+                popup: "animate__animated animate__fadeInDown",
+            },
+            hideClass: {
+                popup: "animate__animated animate__fadeOutUp",
+            },
+        }).then((result) => {
+            // if only result isConfirmed true then delete will happen other wise not.
+            if (result.isConfirmed) {
+                fetch(`http://localhost:5000/myToys/${id}`, {
+                    method: "DELETE",
+                })
+                    .then((res) => res.json())
+                    .then((data) => {
+                        console.log(data);
+                        if (data.deletedCount > 0) {
+                            Swal.fire(
+                                "Deleted!",
+                                "Your file has been deleted.",
+                                "success"
+                            );
+                            const remaining = toys.filter(
+                                (toy) => toy._id !== id
+                            );
+                            setToys(remaining);
+                        }
+                    });
+            }
 
-    // }
+            if (!result.isConfirmed) {
+                Swal.fire("Pufff! Almost gonna deleting it!!");
+            }
+        });
+    };
 
     // console.log(toys);
     return (
@@ -75,8 +116,11 @@ const MyToys = () => {
                         </tr>
                     </thead>
                     <tbody>
-                {toys?.map((toy) => (
-                            <MyToysRow key={toy?._id} toy={toy}></MyToysRow>
+                        {toys?.map((toy) => (
+                            <MyToysRow
+                                key={toy?._id}
+                                toy={toy}
+                                HandelDelete={HandelDelete}></MyToysRow>
                         ))}
                     </tbody>
                 </table>

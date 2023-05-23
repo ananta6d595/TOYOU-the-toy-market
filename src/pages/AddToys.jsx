@@ -2,12 +2,13 @@ import React, { useContext } from "react";
 
 import { AuthContext } from "../provider/AuthProvider";
 import { Form } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const AddToys = () => {
-    const { user, loading } = useContext(AuthContext);
+    const { user } = useContext(AuthContext);
 
     const handleAddToys = (event) => {
-        // event.preventDefault();
+        event.preventDefault();
 
         const form = event.target;
 
@@ -33,17 +34,40 @@ const AddToys = () => {
             detail_description,
         };
 
-        console.log(toyDetails);
-
-        fetch("http://localhost:5000/addToys", {
-            method: "POST",
-            headers: {
-                "content-type": "application/json",
+        Swal.fire({
+            title: "Are you sure?",
+            icon: "info",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, Add Please",
+            showClass: {
+                popup: "animate__animated animate__fadeInDown",
             },
-            body: JSON.stringify(toyDetails),
-        })
-            .then((res) => res.json())
-            .then((data) => console.log(data));
+            hideClass: {
+                popup: "animate__animated animate__fadeOutUp",
+            },
+        }).then((result) => {
+            // if only result isConfirmed true then delete will happen other wise not.
+            if (result.isConfirmed) {
+                fetch("http://localhost:5000/addToys", {
+                    method: "POST",
+                    headers: {
+                        "content-type": "application/json",
+                    },
+                    body: JSON.stringify(toyDetails),
+                })
+                    .then((res) => res.json())
+                    .then((data) => {
+                        console.log(data);
+                        if (data.insertedId > 0) {
+                            Swal.fire("A new toy has been added", "success");
+
+                        }
+                    });
+            }
+        });
+
     };
 
     return (

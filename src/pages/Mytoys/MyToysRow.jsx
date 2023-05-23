@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-const MyToysRow = ({ toy }) => {
+const MyToysRow = ({ toy, HandelDelete }) => {
     const {
         _id,
         toy_name,
@@ -11,9 +11,6 @@ const MyToysRow = ({ toy }) => {
         available_quantity,
     } = toy;
 
-    const HandelDelete = (id) => {
-        console.log(id);
-    };
     return (
         <>
             <tr>
@@ -30,17 +27,17 @@ const MyToysRow = ({ toy }) => {
                 <td>{available_quantity}</td>
                 <th>
                     <NavLink to={`update/${_id}`}>
-                        <button className="btn btn-accent hover:btn-info">
+                        <button className="btn btn-info hover:bg-cyan-700">
                             Update
                         </button>
                     </NavLink>
                 </th>
                 <th>
-                    <NavLink onSubmit={() => HandelDelete(_id)}>
-                        <button className="btn btn-accent hover:btn-info">
-                            Delete
-                        </button>
-                    </NavLink>
+                    <button
+                        onClick={() => HandelDelete(_id)}
+                        className="btn btn-error hover:bg-rose-500">
+                        Delete
+                    </button>
                 </th>
             </tr>
         </>
