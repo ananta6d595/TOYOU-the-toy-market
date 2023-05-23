@@ -68,9 +68,9 @@ const Home = () => {
             <CategoriesTabs></CategoriesTabs>
 
             {/* trending */}
-            <h1 className="text-center font-bold text-5xl mb-6">Trending</h1>
+            {/* <h1 className="text-center font-bold text-5xl mb-6">Trending</h1> */}
             {/* user review */}
-            <h1 className="text-center font-bold text-5xl mb-6">Reviews</h1>
+            {/* <h1 className="text-center font-bold text-5xl mb-6">Reviews</h1> */}
         </>
     );
 };

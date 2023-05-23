@@ -6,6 +6,8 @@ import "aos/dist/aos.css";
 import TabToysCard from "./TabToysCard";
 
 const CategoriesTabs = () => {
+    const [toys, setToys] = useState([]);
+
     function classNames(...classes) {
         return classes.filter(Boolean).join(" ");
     }
@@ -16,7 +18,6 @@ const CategoriesTabs = () => {
         "LEGO Star Wars",
         "LEGO Speed Champions",
     ];
-    const [toys, setToys] = useState([]);
     useEffect(() => {
         Aos.init();
         fetch("https://toy-market-place-server-two.vercel.app/toys")
@@ -46,8 +47,8 @@ const CategoriesTabs = () => {
                         </Tab>
                     ))}
                 </Tab.List>
-                {/* <Tab.Panels className="mt-2">
-                    {toys.map((toys, idx) => (
+                <Tab.Panels className="mt-2">
+                    {categories.map((category, idx) => (
                         <Tab.Panel
                             key={idx}
                             className={classNames(
@@ -56,12 +57,12 @@ const CategoriesTabs = () => {
                             )}>
                             <div className="grid md:grid-cols-2">
                                 {toys.map((toy) => (
-                                    <TabToysCard toy={toy}></TabToysCard>
+                                    <TabToysCard toy={toy} key={toy._id}></TabToysCard>
                                 ))}
                             </div>
                         </Tab.Panel>
                     ))}
-                </Tab.Panels> */}
+                </Tab.Panels>
             </Tab.Group>
         </div>
     );

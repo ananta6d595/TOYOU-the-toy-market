@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const TabToysCard = ({ toy }) => {
     return (
@@ -15,19 +16,14 @@ const TabToysCard = ({ toy }) => {
                         <h2 className="card-title">{toy.toy_name}</h2>
                         <p>Price: {toy.price}</p>
                         <p>Rating: {toy.rating}</p>
-                        <div className="card-actions justify-end">
-                            <button className="btn btn-primary">
-                                View Details
+                        <NavLink to={`/toy/${toy._id}`}>
+                            <button className="btn btn-accent hover:btn-info">
+                                details
                             </button>
-                        </div>
+                        </NavLink>
                     </div>
                 </div>
 
-                <NavLink to={`/toy/${toy._id}`}>
-                    <button className="btn btn-accent hover:btn-info">
-                        details
-                    </button>
-                </NavLink>
                 {/* <a
 
                     className="absolute inset-0 rounded-md ring-blue-400 focus:z-10 focus:outline-none focus:ring-2"
