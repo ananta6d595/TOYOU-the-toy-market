@@ -6,7 +6,6 @@ import "aos/dist/aos.css";
 import TabToysCard from "./TabToysCard";
 
 const CategoriesTabs = () => {
-
     function classNames(...classes) {
         return classes.filter(Boolean).join(" ");
     }
@@ -19,8 +18,8 @@ const CategoriesTabs = () => {
     ];
     const [toys, setToys] = useState([]);
     useEffect(() => {
-          Aos.init();
-        fetch("http://localhost:5000/toys")
+        Aos.init();
+        fetch("https://toy-market-place-server-two.vercel.app/toys")
             .then((res) => res.json())
             .then((data) => setToys(data));
     }, []);

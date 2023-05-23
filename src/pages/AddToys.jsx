@@ -7,8 +7,14 @@ import useTitle from "../hooks/useTitle";
 
 const AddToys = () => {
     const { user } = useContext(AuthContext);
-    useTitle('Add Toys');
+    useTitle("Add Toys");
 
+    const categories = [
+        "LEGO City",
+        "LEGO Marvel Super Heroes",
+        "LEGO Star Wars",
+        "LEGO Speed Champions",
+    ];
     const handleAddToys = (event) => {
         event.preventDefault();
 
@@ -52,25 +58,30 @@ const AddToys = () => {
         }).then((result) => {
             // if only result isConfirmed true then delete will happen other wise not.
             if (result.isConfirmed) {
-                fetch("http://localhost:5000/addToys", {
-                    method: "POST",
-                    headers: {
-                        "content-type": "application/json",
-                    },
-                    body: JSON.stringify(toyDetails),
-                })
+                fetch(
+                    "https://toy-market-place-server-two.vercel.app/addToys",
+                    {
+                        method: "POST",
+                        headers: {
+                            "content-type": "application/json",
+                        },
+                        body: JSON.stringify(toyDetails),
+                    }
+                )
                     .then((res) => res.json())
                     .then((data) => {
                         console.log(data);
                         if (data.insertedId > 0) {
                             Swal.fire("A new toy has been added", "success");
-
                         }
                     });
             }
         });
-
     };
+
+    // const handelSelect = () => {
+
+    // }
 
     return (
         <div className="container mb-24">
@@ -123,17 +134,36 @@ const AddToys = () => {
                                 className="input input-bordered"
                             />
                         </div>
-                        <div className="form-control">
+                        <div className="form-control ">
                             <label className="label">
                                 <span className="label-text">Sub-category</span>
                             </label>
                             <input
                                 type="text"
                                 name="category"
-                                placeholder="Type here"
+                                placeholder="Choose one from below"
                                 className="input input-bordered"
                             />
+                            <p>
+                                "LEGO City", "LEGO Marvel Super Heroes", "LEGO
+                                Star Wars", "LEGO Speed Champions",
+                            </p>
                         </div>
+                        {/* <div className="">
+                            <label className="label">
+                                <span className="label-text">Sub-category</span>
+                            </label>
+                            <select
+                                className="w-full h-12 rounded-lg"
+                                onChange={handelSelect}>
+                                {categories.map((category) => {
+                                    console.log(category);
+                                    <option value={category}>
+                                        {category}
+                                    </option>;
+                                })}
+                            </select>
+                        </div> */}
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Price in USD</span>

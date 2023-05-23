@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 import useTitle from "../hooks/useTitle";
 
 const UpdateToys = () => {
-    useTitle('Update Toys');
+    useTitle("Update Toys");
     const loadedToy = useLoaderData();
     const navigate = useNavigate();
     const { _id, toy_name, price, available_quantity, detail_description } =
@@ -25,7 +25,7 @@ const UpdateToys = () => {
             detail_description,
         };
 
-        fetch(`http://localhost:5000/myToys/${_id}`, {
+        fetch(`https://toy-market-place-server-two.vercel.app/myToys/${_id}`, {
             method: "PATCH",
             headers: {
                 "content-type": "application/json",

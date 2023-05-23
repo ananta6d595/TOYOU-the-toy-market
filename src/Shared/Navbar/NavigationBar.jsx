@@ -116,13 +116,13 @@ const NavigationBar = () => {
                         // <Link to="/">
                         <button
                             onClick={handelLogout}
-                            className="btn inline-flex items-center rounded-md bg-emerald-600 hover:bg-emerald-400 border-0 text-white">
+                            className="btn inline-flex items-center rounded-md bg-cyan-700 hover:bg-cyan-500 border-0 text-white">
                             Logout
                         </button>
                     ) : (
                         // </Link>
                         <Link to="/login">
-                            <button className="btn inline-flex items-center rounded-md bg-emerald-600 hover:bg-emerald-400 border-0 text-white">
+                            <button className="btn inline-flex items-center rounded-md bg-cyan-700 hover:bg-cyan-500 border-0 text-white">
                                 Login
                             </button>
                         </Link>

@@ -34,7 +34,10 @@ const router = createBrowserRouter([
             {
                 path: "/allToys",
                 element: <AllToys></AllToys>,
-                loader: () => fetch("http://localhost:5000/toys"),
+                loader: () =>
+                    fetch(
+                        "https://toy-market-place-server-two.vercel.app/toys"
+                    ),
             },
             {
                 path: "/toy/:id",
@@ -44,7 +47,9 @@ const router = createBrowserRouter([
                     </PrivateRoute>
                 ),
                 loader: ({ params }) =>
-                    fetch(`http://localhost:5000/toys/${params.id}`),
+                    fetch(
+                        `https://toy-market-place-server-two.vercel.app/toys/${params.id}`
+                    ),
             },
             {
                 path: "/myToys",
@@ -59,7 +64,10 @@ const router = createBrowserRouter([
                                 <MyToys></MyToys>
                             </PrivateRoute>
                         ),
-                        loader: () => fetch("http://localhost:5000/toys"),
+                        loader: () =>
+                            fetch(
+                                "https://toy-market-place-server-two.vercel.app/toys"
+                            ),
                     },
                     {
                         // path  "/" die start hoile sheta root route hishabe dhore.
@@ -70,7 +78,9 @@ const router = createBrowserRouter([
                             </PrivateRoute>
                         ),
                         loader: ({ params }) =>
-                            fetch(`http://localhost:5000/toys/${params.id}`),
+                            fetch(
+                                `https://toy-market-place-server-two.vercel.app/toys/${params.id}`
+                            ),
                     },
                 ],
             },

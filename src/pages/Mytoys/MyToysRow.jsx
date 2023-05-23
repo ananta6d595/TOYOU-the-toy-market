@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-const MyToysRow = ({ toy, HandelDelete }) => {
+const MyToysRow = ({ toy, handelDelete }) => {
     const {
         _id,
         toy_name,
@@ -34,7 +34,7 @@ const MyToysRow = ({ toy, HandelDelete }) => {
                 </th>
                 <th>
                     <button
-                        onClick={() => HandelDelete(_id)}
+                        onClick={() => handelDelete(_id)}
                         className="btn btn-error hover:bg-rose-500">
                         Delete
                     </button>

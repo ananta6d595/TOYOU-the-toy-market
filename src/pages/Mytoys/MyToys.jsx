@@ -7,7 +7,7 @@ import useTitle from "../../hooks/useTitle";
 
 const MyToys = () => {
     // for dynamic tab title
-    useTitle('My Toys');
+    useTitle("My Toys");
     //get user data for my toys' to show only logged in user's added toys.
     let [toys, setToys] = useState([]);
     const { user } = useContext(AuthContext);
@@ -24,22 +24,31 @@ const MyToys = () => {
         }
     }, [data]);
 
-    // const onSearchHandler = (event) => {
-    //     const token = event.target.value;
-
-    //     if (token === "") setToys(data.slice(0, 20));
-    //     else {
-    //         // didn't used toys variable because toys variable is already sliced and data variable isn't.
-    //         // toys variable's value is used for showing limited data and data variable's value is used for searching.
-    //         // to search we need all values not limited values.
-    //         let toysData = data.filter((toy) =>
-    //             toy.toy_name?.toLowerCase().includes(`${token.toLowerCase()}`)
-    //         );
-    //         setToys(toysData);
-    //     }
-    // };
-
-    const HandelDelete = (id) => {
+    const handelSortDescending = () => {
+        fetch("https://toy-market-place-server-two.vercel.app/toys/Descending")
+            .then((res) => res.json())
+            .then((data) => {
+                if (data) {
+                    data = data?.filter(
+                        (datum) => datum.seller_name == user?.displayName
+                    );
+                    setToys(data);
+                }
+            });
+    };
+    const handelSortAscending = () => {
+        fetch("https://toy-market-place-server-two.vercel.app/toys/Ascending")
+            .then((res) => res.json())
+            .then((data) => {
+                if (data) {
+                    data = data?.filter(
+                        (datum) => datum.seller_name == user?.displayName
+                    );
+                    setToys(data);
+                }
+            });
+    };
+    const handelDelete = (id) => {
         Swal.fire({
             title: "Are you sure?",
             text: "You won't be able to revert this!",
@@ -57,9 +66,12 @@ const MyToys = () => {
         }).then((result) => {
             // if only result isConfirmed true then delete will happen other wise not.
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/myToys/${id}`, {
-                    method: "DELETE",
-                })
+                fetch(
+                    `https://toy-market-place-server-two.vercel.app/myToys/${id}`,
+                    {
+                        method: "DELETE",
+                    }
+                )
                     .then((res) => res.json())
                     .then((data) => {
                         console.log(data);
@@ -92,13 +104,16 @@ const MyToys = () => {
             </h1>
             {/* <h2 className="text-center">Search</h2> */}
             <div className="w-full text-center mb-8">
-                <input
-                    type="text"
-                    name="search"
-                    className="rounded-full input input-bordered input-info w-full max-w-xl mx-auto"
-                    placeholder="Search"
-                    // onChange={onSearchHandler}
-                />
+                <button
+                    onClick={handelSortAscending}
+                    className="btn bg-emerald-400 md:mr-3">
+                    Ascending
+                </button>
+                <button
+                    onClick={handelSortDescending}
+                    className="btn bg-orange-400">
+                    Descending
+                </button>
                 {/* <button className="absolute left-3/4 md:left-[80%]  text-gray-400">Search</button> */}
             </div>
 
@@ -123,7 +138,7 @@ const MyToys = () => {
                             <MyToysRow
                                 key={toy?._id}
                                 toy={toy}
-                                HandelDelete={HandelDelete}></MyToysRow>
+                                handelDelete={handelDelete}></MyToysRow>
                         ))}
                     </tbody>
                 </table>
